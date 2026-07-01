@@ -19,8 +19,8 @@ if __name__ == "__main__":
     # Debug info
     debug_info = debug.DebugInfo(window, clock)
     debug_info.add_info("FPS", 0)
-    debug_info.add_info("Ball Velocity", ball.velocity)
     debug_info.add_info("Ball Position", ball.pos)
+    debug_info.add_info("Ball Velocity", ball.velocity)
 
     is_running = True
     dt = 0
