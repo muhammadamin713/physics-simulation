@@ -1,6 +1,7 @@
 import pygame
 from circle import Ball
 from vector2 import Vector2
+import debug
 
 WIN_SIZE = (600, 400)
 WIN_TITLE = "Physics Sim"
@@ -14,6 +15,8 @@ if __name__ == "__main__":
     clock = pygame.Clock()
 
     ball = Ball(window, Vector2(300, 200), 10)
+    debug_info = debug.DebugInfo(window, clock)
+    debug_info.add_info("FPS", 0)
 
     is_running = True
     dt = 0
@@ -23,6 +26,9 @@ if __name__ == "__main__":
                 is_running = False
 
         window.fill(BACKGROUND_COLOR)
+
+        debug_info.set_info_value("FPS", f"{clock.get_fps():.2f}")
+        debug_info.debug_render("white")
         
         ball.update(dt)
         ball.render(window, "red", width=1)
