@@ -10,6 +10,12 @@ class Label:
     def set_text(self, text):
         self.text = text
 
+    def set_pos(self, x, y):
+        self.pos = (x, y)
+
+    def get_font(self):
+        return self.font
+
     def render(self, color, antialias=False):
         self.label_surface = self.font.render(self.text, antialias, color)
         self.window.blit(self.label_surface, dest=self.pos)
