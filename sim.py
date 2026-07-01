@@ -14,7 +14,7 @@ if __name__ == "__main__":
     window = pygame.display.set_mode(WIN_SIZE)
     clock = pygame.Clock()
 
-    ball = Ball(window, Vector2(300, 200), 10)
+    ball = Ball(window, Vector2(300, 200), 10, cor=0.5)
 
     # Debug info
     debug_info = debug.DebugInfo(window, clock)
