@@ -12,3 +12,6 @@ class Vector2:
 
     def to_tuple(self):
         return (self.x, self.y)
+
+    def __str__(self):
+        return f"({self.x:.2f}, {self.y:.2f})"

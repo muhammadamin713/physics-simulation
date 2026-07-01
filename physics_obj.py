@@ -6,7 +6,7 @@ class Physics2DObject:
 
     def __init__(self, pos: Vector2):
         self.pos = pos
-        self.speed = 0
+        self.velocity = Vector2(0, 0)
 
     def gravity(self, dt):
         """
@@ -14,8 +14,5 @@ class Physics2DObject:
         the landing platform. You need to clamp the value of pos.y
         yourself.
         """
-        self.accel(self.GRAVITY)
-        self.pos.y += self.speed * dt
-
-    def accel(self, value):
-        self.speed += value
+        self.velocity.y += self.GRAVITY
+        self.pos.y += self.velocity.y * dt
